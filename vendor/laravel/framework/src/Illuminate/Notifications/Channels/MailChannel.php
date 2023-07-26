@@ -9,8 +9,6 @@ use Illuminate\Mail\Markdown;
 use Illuminate\Notifications\Notification;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Symfony\Component\Mailer\Header\MetadataHeader;
-use Symfony\Component\Mailer\Header\TagHeader;
 
 class MailChannel
 {
@@ -46,7 +44,7 @@ class MailChannel
      *
      * @param  mixed  $notifiable
      * @param  \Illuminate\Notifications\Notification  $notification
-     * @return \Illuminate\Mail\SentMessage|null
+     * @return void
      */
     public function send($notifiable, Notification $notification)
     {
@@ -61,7 +59,7 @@ class MailChannel
             return $message->send($this->mailer);
         }
 
-        return $this->mailer->mailer($message->mailer ?? null)->send(
+        $this->mailer->mailer($message->mailer ?? null)->send(
             $this->buildView($message),
             array_merge($message->data(), $this->additionalMessageData($notification)),
             $this->messageBuilder($notifiable, $notification, $message)
@@ -143,19 +141,7 @@ class MailChannel
         $this->addAttachments($mailMessage, $message);
 
         if (! is_null($message->priority)) {
-            $mailMessage->priority($message->priority);
-        }
-
-        if ($message->tags) {
-            foreach ($message->tags as $tag) {
-                $mailMessage->getHeaders()->add(new TagHeader($tag));
-            }
-        }
-
-        if ($message->metadata) {
-            foreach ($message->metadata as $key => $value) {
-                $mailMessage->getHeaders()->add(new MetadataHeader($key, $value));
-            }
+            $mailMessage->setPriority($message->priority);
         }
 
         $this->runCallbacks($mailMessage, $message);
@@ -258,7 +244,7 @@ class MailChannel
     protected function runCallbacks($mailMessage, $message)
     {
         foreach ($message->callbacks as $callback) {
-            $callback($mailMessage->getSymfonyMessage());
+            $callback($mailMessage->getSwiftMessage());
         }
 
         return $this;

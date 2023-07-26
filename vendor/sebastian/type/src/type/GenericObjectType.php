@@ -11,7 +11,10 @@ namespace SebastianBergmann\Type;
 
 final class GenericObjectType extends Type
 {
-    private bool $allowsNull;
+    /**
+     * @var bool
+     */
+    private $allowsNull;
 
     public function __construct(bool $nullable)
     {
@@ -41,9 +44,6 @@ final class GenericObjectType extends Type
         return $this->allowsNull;
     }
 
-    /**
-     * @psalm-assert-if-true GenericObjectType $this
-     */
     public function isGenericObject(): bool
     {
         return true;
