@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresaRequest;
 use App\Http\Requests\EmpresaUpdateRequest;
@@ -11,7 +9,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Storage;
 use Throwable;
-
 class EmpresaController extends Controller
 {
     /**
@@ -28,8 +25,6 @@ class EmpresaController extends Controller
             'head'=>$heads['head'],
         ]);
     }
-
-    
     public function head_datatables(){
         $columns = array(
             array('data'=>'id'),
@@ -37,7 +32,6 @@ class EmpresaController extends Controller
             array('data'=>'surname'),
             array('data'=>'ruc'),
             array('data'=>'action'),
-
         );
         $head = array(
             'ID',
@@ -69,7 +63,6 @@ class EmpresaController extends Controller
     {
         return view('empresa/create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -100,7 +93,6 @@ class EmpresaController extends Controller
                 $empresa->logo = $nameLogo;
                 $empresa->save();
             }
-
             DB::commit();
             Session::flash('success','La empresa fue creado con exito'); 
 
@@ -109,8 +101,6 @@ class EmpresaController extends Controller
             DB::rollBack();
             return response()->json(['errors'=>array('Ooops tenemos un error, contacte con el programador')],422);
         }
-
-
     }
 
     /**
@@ -123,7 +113,6 @@ class EmpresaController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -134,7 +123,6 @@ class EmpresaController extends Controller
     {
         return view('empresa/edit', compact('empresa'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -145,17 +133,13 @@ class EmpresaController extends Controller
     public function update(EmpresaUpdateRequest $request, Empresa $empresa)
     {
         try{
-
             $all = $request->all();
-        
             DB::beginTransaction();
-            if ($request->hasFile('logo')) {
-                
+            if ($request->hasFile('logo')) {  
                 $exists = Storage::disk('public_uploads')->exists('empresa/'.$empresa->id.'/'.$empresa->logo);
                 if ($exists) {
                     Storage::disk('public_uploads')->delete('empresa/'.$empresa->id.'/'.$empresa->logo);
                 }
-
                 $files = $request->file('logo');
                 $extension = $files->getClientOriginalExtension();
                 $allowedfileExtension=['jpg','png','jpeg','gif'];
@@ -167,19 +151,14 @@ class EmpresaController extends Controller
                 }
                 $all['logo'] = $nameLogo;
             }
-
             $empresa->fill($all)->save();
-
-
             DB::commit();
-
             return response()->json(['success'=>'Empresa actualizada con exito']);
         }catch (Throwable $e) {
             DB::rollBack();
             return response()->json(['errors'=>array('Ooops tenemos un error, contacte con el programador')],422);
         }
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -192,7 +171,6 @@ class EmpresaController extends Controller
         if ($exists) {
             Storage::disk('public_uploads')->delete('empresa/'.$empresa->id.'/'.$empresa->logo);
         }
-        
         $empresa->delete();
     }
 }
