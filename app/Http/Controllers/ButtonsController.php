@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Yajra\Datatables\Datatables;
@@ -26,7 +24,6 @@ class ButtonsController extends Controller
             'head'=>$heads['head'],
         ]);    
     }
-
     public function head_datatables(){
         $columns = array(
             array('data'=>'id'),
@@ -46,7 +43,6 @@ class ButtonsController extends Controller
         );
         return array('columns'=>$columns,'head'=>$head);
     }
-
     public function datatables(){
         $table = Datatables::of(Button::all());
         $table->addColumn('action', function($row){
@@ -64,7 +60,6 @@ class ButtonsController extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -86,7 +81,6 @@ class ButtonsController extends Controller
             return response()->json(['success'=>'Buttons creado con exito','reload'=>1]);
         }
     }
-
     /**
      * Display the specified resource.
      *
@@ -97,7 +91,6 @@ class ButtonsController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -108,7 +101,6 @@ class ButtonsController extends Controller
     {
         //
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -120,7 +112,6 @@ class ButtonsController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
