@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
  <div class="content-wrapper">
-
     <!-- Main content -->
     <div class="content mt-2">
       <div class="container-fluid">

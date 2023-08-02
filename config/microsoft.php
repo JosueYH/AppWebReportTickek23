@@ -1,5 +1,4 @@
 <?php
-
 return [
     /*
      * DataTables search options.
@@ -11,5 +10,4 @@ return [
     'oauth_authority' => env('OAUTH_AUTHORITY'),
     'oauth_authorize_endpoint' => env('OAUTH_AUTHORIZE_ENDPOINT'),
     'oauth_token_endpoin' => env('OAUTH_TOKEN_ENDPOINT'),
-
 ];

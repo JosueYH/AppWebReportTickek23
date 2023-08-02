@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Http\Requests;
-
 use Illuminate\Foundation\Http\FormRequest;
-
 class EmpresaRequest extends FormRequest
 {
     /**
@@ -32,7 +29,6 @@ class EmpresaRequest extends FormRequest
       
         return $rules;
     }
-
     public function messages()
     {
         return [

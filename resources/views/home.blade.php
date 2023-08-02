@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
  <div class="content-wrapper">
-
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -29,7 +27,6 @@
             <div class="small-box bg-info">
               <div class="inner">
                 <h3>{{$user_c}}</h3>
-
                 <p>Usuarios registrados</p>
               </div>
               <div class="icon">
@@ -44,7 +41,6 @@
             <div class="small-box bg-success">
               <div class="inner">
                 <h3>{{$ticket}}</h3>
-
                 <p>Total de tickets</p>
               </div>
               <div class="icon">
@@ -59,7 +55,6 @@
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3>{{$resueltos}}</h3>
-
                 <p>Tickets resueltos</p>
               </div>
               <div class="icon">
@@ -74,7 +69,6 @@
             <div class="small-box bg-danger">
               <div class="inner">
                 <h3>{{$activos}}</h3>
-
                 <p>Tickets activos</p>
               </div>
               <div class="icon">
@@ -93,14 +87,11 @@
 			     	   		<b>BIENVENIDO A NUESTRO SISTEMA!</b>
 			     	   </div>
 		              <div class="card-body">
-
 		                <p class="card-text">
 		                  Sistema de Atención de Tickets en Proceso ...
 		                </p>
-
 		              </div>
 		            </div>
-
 		     	</div>
 		    </div>
 		    <!-- /.row (main row) -->

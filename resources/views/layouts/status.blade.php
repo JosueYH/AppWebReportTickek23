@@ -1,4 +1,3 @@
-
 <?php $color_active = ''; ?>
 @foreach($estatus as $es)
 	@if($es->nombre == $status)

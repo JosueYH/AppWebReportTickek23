@@ -12,7 +12,6 @@
         <div class="alert alert-danger" id="errors_form" style="display: none"></div>
         <div class="alert alert-success" id="success_form" style="display: none"></div>
         <form action="{{ url('permisos') }}" method="POST" id="submit_form">
-
           <div class="row">
             <div class="col-12 ">
               <label for="">Nombre</label>
@@ -27,7 +26,6 @@
           </div>
         </form>
       </div>
-
     </div>
   </div>
 </div>

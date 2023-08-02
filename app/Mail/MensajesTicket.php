@@ -1,12 +1,9 @@
 <?php
-
 namespace App\Mail;
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
-
 class MnesajesTicket extends Mailable
 {
     use Queueable, SerializesModels;
@@ -22,7 +19,6 @@ class MnesajesTicket extends Mailable
     {
         $this->data = $data;
     }
-
     /**
      * Build the message.
      *

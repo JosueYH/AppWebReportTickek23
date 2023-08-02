@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
-
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -11,7 +9,6 @@ use Hash;
 use Laravel\Socialite\Facades\Socialite;
 use Str;
 use App\Models\User;
-
 class LoginController extends Controller
 {
     /*
@@ -24,16 +21,13 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
     use AuthenticatesUsers;
-
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-
     /**
      * Create a new controller instance.
      *
@@ -43,7 +37,6 @@ class LoginController extends Controller
       // Obtenemos los datos del usuario
       $social_user = Socialite::driver($provider)->stateless()->user();
       //dd($user); // Sirve para visualizar que llega el callback antes de seguir con el codigo 
-
       if ($user = User::where('email', $social_user->email)->first()) { 
         return $this->authAndRedirect($user); // Login y redirección
       } else {
@@ -60,7 +53,6 @@ class LoginController extends Controller
           return $this->authAndRedirect($user); // Login y redirección
       }
     }
-
     // Login y redirección
     public function authAndRedirect($user) {
       Auth::login($user);

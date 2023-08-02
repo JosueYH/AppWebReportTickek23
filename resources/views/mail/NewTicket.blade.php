@@ -11,7 +11,6 @@
     <br>
     <b>titulo:</b>
     <p>{{$data->titulo}}</p>
-
     <b>Descripcion:</b>
     <p>{{$data->mensaje}}</p>
     <ul>

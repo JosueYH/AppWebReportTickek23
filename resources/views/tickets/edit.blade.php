@@ -12,13 +12,11 @@
         <div class="alert alert-danger" id="errors_form_update" style="display: none"></div>
         <div class="alert alert-success" id="success_form_update" style="display: none"></div>
         <form action="" data-action="{{ url('tickets') }}" method="PUT" id="updated_form">
-
           <div class="row">
             <div class="col-12 ">
               <label for="">Titulo</label>
               <input type="text" name="titulo" id="titulo_input" class="form-control" placeholder="titulo del ticket"  readonly="">
             </div>
-            
           </div>
           <hr>
           <div class="row mt-2">
@@ -26,7 +24,6 @@
                 <label for="exampleFormControlSelect1">Categorias </label>
                 <select class="form-control change_select" id="change_select_updated"  data-live-search="true" data-two="on">
                   <option value="">Seleccionar Categoria.</option>
-
                   @foreach($categorias as $p)
                     <option value="{{$p->nombre}}" data-id="{{$p->id}}">{{$p->nombre}}</option>
                   @endforeach
@@ -51,7 +48,6 @@
               <br>
               <textarea name="descripcion" id="descripcion_edit"  class="form-control"></textarea>
             </div>
-
           </div>
           <hr>
           <div class="row mt-2">
@@ -61,7 +57,6 @@
           </div>
         </form>
       </div>
-
     </div>
   </div>
 </div>

@@ -1,7 +1,5 @@
 <?php
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Filesystem Disk
@@ -12,9 +10,7 @@ return [
     | based disks are available to your application. Just store away!
     |
     */
-
     'default' => env('FILESYSTEM_DRIVER', 'local'),
-
     /*
     |--------------------------------------------------------------------------
     | Default Cloud Filesystem Disk
@@ -25,9 +21,7 @@ return [
     | will be bound as the Cloud disk implementation in the container.
     |
     */
-
     'cloud' => env('FILESYSTEM_CLOUD', 's3'),
-
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -40,14 +34,11 @@ return [
     | Supported Drivers: "local", "ftp", "sftp", "s3"
     |
     */
-
     'disks' => [
-
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
         ],
-
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
@@ -67,9 +58,7 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
-
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Symbolic Links
@@ -80,9 +69,7 @@ return [
     | the locations of the links and the values should be their targets.
     |
     */
-
     'links' => [
         public_path('storage') => storage_path('app/public'),
     ],
-
 ];

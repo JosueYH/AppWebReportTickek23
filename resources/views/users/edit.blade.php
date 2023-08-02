@@ -12,7 +12,6 @@
         <div class="alert alert-danger" id="errors_form_update" style="display: none"></div>
         <div class="alert alert-success" id="success_form_update" style="display: none"></div>
         <form action="{{ url('usuarios/'.$user->id) }}" method="PUT" id="updated_form">
-
           <div class="row">
             <div class="col-6 col-md-4 col-lg-4 ">
               <label for="">Nombre</label>
@@ -66,7 +65,6 @@
                 @endforeach
               </select>
             </div>
-
             <div class="col-6">
               <label for="exampleFormControlSelect1">Categorias</label>
               <select class="form-control " id="change_select_updated"  data-live-search="true" >
@@ -78,8 +76,7 @@
             </div>
           </div>
           <div class="row mt-2">
-            <div class="col-6">
-              
+            <div class="col-6">  
             </div>
             <div class="col-6 " >
               <div class="row  justify-content-center" id="options_select_updated">
@@ -88,8 +85,7 @@
                 @endforeach
               </div>
             </div>
-          </div>
-          
+          </div> 
           <div class="row mt-2">
             <div class="col-12 text-center">
               <button class="btn btn-primary">Guardar</button>
@@ -97,7 +93,6 @@
           </div>
         </form>
       </div>
-
     </div>
   </div>
 </div>

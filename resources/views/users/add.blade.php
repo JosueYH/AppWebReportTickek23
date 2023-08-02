@@ -12,7 +12,6 @@
         <div class="alert alert-danger" id="errors_form" style="display: none"></div>
         <div class="alert alert-success" id="success_form" style="display: none"></div>
         <form action="{{ url('usuarios') }}" method="POST" id="submit_form">
-
           <div class="row">
             <div class="col-6 col-md-4 col-lg-4 ">
               <label for="">Nombre</label>
@@ -53,7 +52,6 @@
               <label for="exampleFormControlSelect1">Categorias </label>
               <select class="form-control change_select" id="change_select"  data-live-search="true" >
                 <option value="">Seleccionar Categoria.</option>
-
                 @foreach($categoria as $p)
                   <option value="{{$p->nombre}}" data-id="{{$p->id}}">{{$p->nombre}}</option>
                 @endforeach
@@ -62,11 +60,9 @@
           </div>
           <div class="row mt-2">
             <div class="col-6">
-              
             </div>
             <div class="col-6 " >
-              <div class="row  justify-content-center" id="options_select">
-                
+              <div class="row  justify-content-center" id="options_select">  
               </div>
             </div>
           </div>
@@ -77,7 +73,6 @@
           </div>
         </form>
       </div>
-
     </div>
   </div>
 </div>

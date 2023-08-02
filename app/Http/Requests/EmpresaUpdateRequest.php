@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Http\Requests;
-
 use Illuminate\Foundation\Http\FormRequest;
-
 class EmpresaUpdateRequest extends FormRequest
 {
     /**
@@ -15,7 +12,6 @@ class EmpresaUpdateRequest extends FormRequest
     {
         return true;
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -32,7 +28,6 @@ class EmpresaUpdateRequest extends FormRequest
       
         return $rules;
     }
-
     public function messages()
     {
         return [

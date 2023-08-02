@@ -12,9 +12,7 @@
         <div class="alert alert-danger" id="errors_form" style="display: none"></div>
         <div class="alert alert-success" id="success_form" style="display: none"></div>
         <form action="{{ url('tickets') }}" method="POST" id="submit_form">
-
           <div class="row">
-  
             <div class="col-6 ">
               <label for="">Titulo</label>
               <input type="text" name="titulo" class="form-control" placeholder="titulo del ticket">
@@ -29,7 +27,6 @@
                 <label for="exampleFormControlSelect1">Categorias </label>
                 <select class="form-control change_select" id="change_select"  data-live-search="true" >
                   <option value="">Seleccionar Categoria.</option>
-
                   @foreach($categorias as $p)
                     @foreach($cat_user as $cc)
                       @if($p->nombre == $cc->nombre)
@@ -46,8 +43,7 @@
           </div>
           <div class="row">
             <div class="col-12 " >
-              <div class="row  justify-content-center" id="options_select">
-                
+              <div class="row  justify-content-center" id="options_select">    
               </div>
             </div>
           </div>
@@ -58,7 +54,6 @@
               <br>
               <textarea name="descripcion" id=""  class="form-control"></textarea>
             </div>
-
           </div>
           <hr>
           <div class="row mt-2">
@@ -68,7 +63,6 @@
           </div>
         </form>
       </div>
-
     </div>
   </div>
 </div>

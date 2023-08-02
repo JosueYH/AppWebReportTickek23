@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
  <div class="content-wrapper">
-
     <!-- Main content -->
     <div class="content mt-2">
       <div class="container-fluid">
@@ -19,7 +17,6 @@
                       @include('tickets.buttons_category',['categorias'=>$categorias,'cat_user'=>$cat_user])
                     </div>
                   </div>
-               
                     <!--TABLA REALIZADA CON VUEJS Y DATATABLES LE PASAMOS LAS COLUMNAS Y HEAD PARA QUE SEA DINAMICA PARA CUALQUIER VISTA-->
                     <table-ticket :columns="{{ json_encode($columns) }}" :head="{{ json_encode($head) }}" :estatus="{{ json_encode($status)}}"  tipe="all" ></table-ticket>
                 </div>
@@ -31,9 +28,7 @@
     <!-- /.content -->
     @include('tickets.add')
     @include('tickets.edit')
-
 </div>
-
 @endsection
 @section('scripts_before_init')
   <script>
@@ -47,7 +42,5 @@
         locate: 'it'
       });
     });
-
   </script>
-
 @endsection

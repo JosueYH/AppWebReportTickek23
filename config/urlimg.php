@@ -1,9 +1,6 @@
 <?php
-
 use Illuminate\Support\Str;
-
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Session Driver
@@ -17,9 +14,5 @@ return [
     |            "memcached", "redis", "dynamodb", "array"
     |
     */
-
     'path' => env('APP_IMG', 'localhost'),
-
-  
-
 ];

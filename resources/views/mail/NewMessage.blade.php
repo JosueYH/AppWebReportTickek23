@@ -10,6 +10,5 @@
     <br>
     <p>El mensaje es el siguiente:</p>
     <?php echo $data->mensaje; ?>  
- 
 </body>
 </html>

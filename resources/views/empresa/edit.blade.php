@@ -1,5 +1,3 @@
-
-
 <!-- Modal -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg " role="document">
@@ -30,7 +28,6 @@
                         <label for="">Apellido:</label>
                         <input type="text" name="surname" class="form-control" placeholder="Ingrese apellido" required value="{{$empresa->surname}}">
                     </div>
-
                 </div>
                 <hr>
                 <div class="row">
@@ -46,12 +43,10 @@
                         <label for="">Color:</label>
                         <input type="text" name="color" class="form-control" placeholder="Ingrese un color ejemplo: #00000" required  value="{{$empresa->color}}">
                     </div>
-
                 </div>
                 <!--Seccion de preview para imagen de logotipo-->
                 <div class="row">
                     <div class="col-lg-4">
-
                     </div>
                     <div class="col-lg-4" >
                         @if(file_exists(public_path('storage/empresa/'.$empresa->id.'/'.$empresa->logo)))
@@ -65,7 +60,6 @@
                     <div class="col-lg-4">
 
                     </div>
-
                 </div>
                 <hr>
                 <div class="row mt-2">
@@ -73,11 +67,9 @@
                         <button class="btn btn-primary">Guardar</button>
 
                     </div>
-
                 </div>
             </form>
       </div>
-
     </div>
   </div>
 </div>

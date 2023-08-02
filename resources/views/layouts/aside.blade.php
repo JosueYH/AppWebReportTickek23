@@ -6,7 +6,6 @@
                style="opacity: .8"-->
           <span class="brand-text font-weight-light">{{ config('app.name', 'Laravel') }}</span>
         </a>
-
         <!-- Sidebar -->
         <div class="sidebar">
           <!-- Sidebar user panel (optional) -->
@@ -21,7 +20,6 @@
               <a href="#" class="d-block" data-toggle="modal" data-target="#editProfileModal"><i class="fas fa-edit"></i></a>
             </div>
           </div>
-
           <!-- Sidebar Menu -->
           <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -36,9 +34,7 @@
                 </a>
               </li>
               @role('usuario')
-
               @else
-
               <li class="nav-item">
                 <!--<a href="{{ url('/empresa')}}" class="nav-link {{ (request()->is('empresa*')) ? 'active' : '' }}" >
                   <i class="nav-icon fas fa-th"></i>
@@ -46,7 +42,6 @@
                     Institucion
                   </p>
                 </a>-->
-
               </li>
               <li class="nav-item">
                 <a href="{{ url('/repository')}}" class="nav-link {{ (request()->is('repository*')) ? 'active' : '' }}" >
@@ -55,9 +50,7 @@
                     Repositorio Archivos
                   </p>
                 </a>
-
               </li>
-
               <li class="nav-item has-treeview  {{ (request()->is('usuarios*') || request()->is('rol*') || request()->is('categorias*')) || request()->is('permisos') ? 'menu-open' : '' }}">
                 <a href="#" class="nav-link {{ (request()->is('usuarios*') || request()->is('rol*') || request()->is('categorias*'))  || request()->is('permisos') ? 'active' : '' }}">
                   <i class="nav-icon fas fa-th"></i>
@@ -67,7 +60,6 @@
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-
                   <li class="nav-item">
                     <a href="{{ url('/usuarios')}}" class="nav-link {{ (request()->is('usuarios*')) ? 'active' : '' }}">
                       <i class="fas fa-certificate"></i>
@@ -94,18 +86,9 @@
                     </a>
                   </li>
                   @endrole
-                  <!--li class="nav-item">
-                    <a href="{{ url('/permisos')}}" class="nav-link {{ (request()->is('permisos*')) ? 'active' : '' }}">
-                      <i class="fas fa-certificate"></i>
-                      <p>
-                        Permisos
-                      </p>
-                    </a>
-                  </li-->
                 </ul>
               </li>
               @endrole
-
                <li class="nav-item">
                 <a href="{{ url('/tickets')}}" class="nav-link {{ (request()->is('tickets*')) ? 'active' : '' }}" >
                   <i class="nav-icon fas fa-th"></i>
@@ -113,7 +96,6 @@
                     Tickets
                   </p>
                 </a>
-
               </li>
               @role('administrador')
                 <li class="nav-item">
@@ -123,7 +105,6 @@
                       Estados del Ticket
                     </p>
                   </a>
-
                 </li>
               @endrole
               <li class="nav-item">
@@ -133,18 +114,7 @@
                     Reportes
                   </p>
                 </a>
-
               </li>
-            
-              <!--li class="nav-item">
-                <a href="{{ url('/buttons')}}" class="nav-link {{ (request()->is('buttons*')) ? 'active' : '' }}" >
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>
-                    Buttons Permisos
-                  </p>
-                </a>
-
-              </li-->
             </ul>
           </nav>
           <!-- /.sidebar-menu -->

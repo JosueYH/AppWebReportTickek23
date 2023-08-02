@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
  <div class="content-wrapper">
-
     <!-- Main content -->
     <div class="content mt-2">
       <div class="container-fluid">
@@ -29,7 +27,6 @@
                                 <label for="">Apellido:</label>
                                 <input type="text" name="surname" class="form-control" placeholder="Ingrese apellido" required>
                             </div>
-
                         </div>
                         <hr>
                         <div class="row">
@@ -45,28 +42,22 @@
                                 <label for="">Color:</label>
                                 <input type="text" name="color" class="form-control" placeholder="Ingrese un color ejemplo: #00000" required>
                             </div>
-
                         </div>
                         <!--Seccion de preview para imagen de logotipo-->
                         <div class="row">
                             <div class="col-lg-4">
-
                             </div>
                             <div class="col-lg-4" >
                                 <img src="" alt="" class="w-100" id="file-preview" style="display: none; height:350px;">
                             </div> 
                             <div class="col-lg-4">
-
                             </div>
-
                         </div>
                         <hr>
                         <div class="row mt-2">
                             <div class="col-12 text-center">
                                 <button class="btn btn-primary">Guardar</button>
-
                             </div>
-
                         </div>
                     </form>
                 </div>
@@ -77,7 +68,6 @@
     </div>
 </div>
 @endsection
-
 @section('scripts_before_init')
   <script>
     const base_url_http = "{{ url('empresa/datatable')}}";

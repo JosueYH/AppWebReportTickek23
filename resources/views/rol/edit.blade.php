@@ -19,7 +19,6 @@
             </div>
           </div>
           <hr>
-     
           <div class="row mt-2">
             <div class="col-12 text-center">
               <button class="btn btn-primary">Guardar</button>
@@ -27,7 +26,6 @@
           </div>
         </form>
       </div>
-
     </div>
   </div>
 </div>

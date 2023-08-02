@@ -1,8 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
  <div class="content-wrapper">
-
     <!-- Main content -->
     <div class="content mt-2">
       <div class="container-fluid">
@@ -22,7 +20,6 @@
                   <hr>
                     <!--TABLA REALIZADA CON VUEJS Y DATATABLES LE PASAMOS LAS COLUMNAS Y HEAD PARA QUE SEA DINAMICA PARA CUALQUIER VISTA-->
                     <table-ticket :columns="{{ json_encode($columns) }}" :head="{{ json_encode($head) }}" :id_filter="{{$id_filter}}" :estatus="{{ json_encode($status)}}"   tipe="filter_category" ></table-ticket>
-
                 </div>
               </div>
             </div>
@@ -32,9 +29,7 @@
     <!-- /.content -->
     @include('tickets.add')
     <div id="response_edit"></div>
-
 </div>
-
 @endsection
 @section('scripts_before_init')
   <script>
